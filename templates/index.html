@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prototyping Assistance</title>
+</head>
+<body>
+<h1>Experiments</h1>
+<a href="/create_experiment">Create Experiment</a>
+<table border="1">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Metrics</th>
+<th>Success Criteria</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+{% for experiment in experiments %}
+<tr>
+<td>{{ experiment.name }}</td>
+<td>{{ experiment.description }}</td>
+<td>{{ experiment.metrics }}</td>
+<td>{{ experiment.success_criteria }}</td>
+<td>
+<a href="/experiment_detail/{{ experiment.id }}">Details</a>
+<a href="/collect_results/{{ experiment.id }}">Collect Results</a>
+<a href="/results_analysis/{{ experiment.id }}">Analyze Results</a>
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</body>
+</html>
+
+
