@@ -1,0 +1,21 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Collect Results</title>
+</head>
+<body>
+<h1>Collect Results</h1>
+<h2>{{ experiment.name }}</h2>
+<form method="POST">
+{% for metric in experiment.metrics %}
+<label for="{{ metric }}">{{ metric }}:</label>
+<input type="text" id="{{ metric }}" name="values" required>
+{% endfor %}
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+
